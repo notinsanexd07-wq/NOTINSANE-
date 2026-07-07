@@ -255,7 +255,6 @@ export default function AdminPortal({ config, onSave, onClose, onReset }: AdminP
   const [searchTerm, setSearchTerm] = useState('');
   const [showPinCode, setShowPinCode] = useState(false);
   const [dragActiveSection, setDragActiveSection] = useState<string | null>(null);
-  const [showHint, setShowHint] = useState(false);
 
   // Custom Notifications / Toast triggers
   const triggerToast = (type: 'success' | 'error', message: string) => {
@@ -682,27 +681,7 @@ export default function AdminPortal({ config, onSave, onClose, onReset }: AdminP
                     <AlertCircle className="w-3.5 h-3.5" />
                     <span>{loginError}</span>
                   </motion.div>
-                ) : (
-                  <div className="flex flex-col items-center gap-1">
-                    <button
-                      type="button"
-                      onClick={() => setShowHint(!showHint)}
-                      className="text-[9px] text-gray-500 hover:text-purple-400 uppercase font-bold tracking-widest transition-colors flex items-center gap-1"
-                    >
-                      <Shield className="w-3 h-3 text-purple-500" />
-                      <span>{showHint ? "Hide Hint" : "Reveal PIN Hint"}</span>
-                    </button>
-                    {showHint && (
-                      <motion.div 
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="text-[10px] text-emerald-400 font-mono font-bold tracking-widest uppercase px-2 py-0.5 rounded-lg bg-emerald-950/20 border border-emerald-500/10"
-                      >
-                        KEYCODE IS 0707
-                      </motion.div>
-                    )}
-                  </div>
-                )}
+                ) : null}
               </AnimatePresence>
             </div>
 
