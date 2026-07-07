@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Linktree",
+  "description": "A fully responsive, highly optimized, and modern portfolio Linktree-style website for NOT INSANE.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
